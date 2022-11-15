@@ -1,0 +1,18 @@
+{% extends 'portfolio/base.html' %}
+
+{% block content %}
+<div class="container text-center">
+<h1 id="main-header">This is my blog catalog! Welcome, choose your blog</h1>
+
+<h2>(Kirill has written {{ blogs.count }} blog{{ blogs.count|pluralize }})</h2>
+</div>
+{% for blog in blogs %}
+<div class="container-fluid bg-white p-2" style="--bs-bg-opacity: .3">
+<p class="fs-1"><a href="{% url 'blog:detail' blog.pk %}">{{blog.title}}</a></p>
+    <p class="fs-5 text-secondary">{{ blog.posted|date:'M d Y'|upper }}</p>
+<p class="fs-4">{{ blog.content|truncatewords:20 }}</p>
+    </div>
+    <br>
+{% endfor %}
+
+{% endblock %}

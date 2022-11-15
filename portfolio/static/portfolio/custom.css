@@ -1,0 +1,12 @@
+.navbar-nav .nav-link:hover {
+    color: rgba(0,0,0,.5) !important;
+}
+
+body{
+    background-size: cover;
+}
+
+
+#main-header{
+font-size: 70px;
+}
